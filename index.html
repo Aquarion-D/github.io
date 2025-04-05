@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aquarion-D</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <button class="tab" onclick="showTab('about', event)">About</button>
+      <button class="tab" onclick="showTab('download', event)">Download</button>
+      <button class="tab" onclick="showTab('changelog', event)">Changelog</button>
+      <button class="tab" onclick="showTab('privacy', event)">Privacy Notice</button>
+      <button class="tab" onclick="showTab('credits', event)">Credits</button>
+    </div>
+    <div class="content">
+      <div id="about" class="content-section active">
+        <h1>About Aquarion</h1>
+        <p>Aquarion is a customizable Discord theme. Clean. Stylish. No telemetry. Just vibes.</p>
+      </div>
+      <div id="download" class="content-section">
+        <h1>Download</h1>
+        <p>You can download the latest version from our <a href="https://github.com/Aquarion-D/Aquarion">GitHub</a>.</p>
+      </div>
+      <div id="changelog" class="content-section">
+        <details>
+          <summary>**Changelog**</summary>
+        
+        - Moved date dividers to the middle.
+        - Added new options for `alt-color` to use in several places.
+        - Removed the annoying help message from HepBoat in the ClearVision Support server.
+        - Removed the border around Nitro for "most popular."
+        - Added radical status.
+        - Changed activity texts to use the alt-color.
+        - Moved the new message pill to the middle, removed the dividers, made it alt color, and made it square.
+        - Changed the server member's list to use alt color for roles and the lines on the side to be main color.
+        - Changed server channel category names to use alt color.
+        - Removed some borders and added more shading.
+        - Removed glow from the wordmark. Changed to "Aquarion v1.5.5".
+        - Theme button whites to main color.
+        - Made text box use background-shading.
+        - Changed the border on the Spotify controls plugin for Vencord.
+        - Rounded a few buttons.
+        - Darkened Vencord plugin boxes.
+        - Changed Vencord plugin info text color to white (`#fff`).
+        - Removed the bubbles for statuses, as well as tried to make most of them transparent with the main color as a border.
+        - Changed the guild folders to be slightly transparent versions of the main color.
+        - Slightly darkened the voice count.
+        - Added support for the Vencord plugin to send voice messages.
+        - Background of the home icon made to be transparent so that if the image doesn't fill it all, it doesn't look weird.
+        - Removed the home shop mosaic.
+        - In settings, under nitro, changed the button shine to alt color and slowed it down a little.
+        - Changed the message request section to use the same style as hovering over a regular message, makes it a little easier to see.
+        - Changed the tags some for credit to myself.
+        - Edited the keybind recording in settings for voice and video push-to-talk to make it easier to see while recording.
+        - Removed the background of the Discord shop so that you can see the custom background.
+        - Made it easier to see the last played time for games.
+        - Weird pop-up about "looking for blocked users?" has been made transparent.
+        - Made the forums list title slightly less intrusive. No one likes a flashbang.
+        - Also changed the forums user and message content to be easier to see.
+        - Added hover effect to emoji remove in server settings.
+        - In user settings -> boost, adjusted popup about boost having a new home to be slightly transparent, also padded the "boost not used" popout.
+        - Applied background overlay to the boost mural in server menu -> boost this server.
+        - Changed the button to use white.
+        - Adjusted the forums start chat to be easier to see.
+        - Added an option to enable a frosted glass effect.
+        - A lot more stuff that I can't be bothered to type. For a complete history of changes, it's best to read the [commits](https://github.com/Aquarion-D/Aquarion/commits/Aquarion/).
+        
+        </details>
+      </div>
+      <div id="privacy" class="content-section">
+        <h1>Privacy Notice</h1>
+        <p>Aquarion does not collect any user data or telemetry.</p>
+        <p>When checking for updates, Aquarion will access:</p>
+        <ul>
+          <li><code>https://aquarion-d.github.io/Aquarion/main.css</code></li>
+          <li><code>https://discordstyles.github.io/RadialStatus/RadialStatus.css</code></li>
+        </ul>
+        <p>GitHub may show public stats like downloads and forks.</p>
+      </div>
+      <div id="credits" class="content-section">
+        <h1>Credits</h1>
+        <h2>Images</h2>
+        <ul>
+          <li>Background image from the Aquarion GitHub repo screenshots folder.</li>
+          <li>The <strong>Aquarion Logo</strong> is available for free download <a href="https://www.kindpng.com/imgv/hwbRbbo_emoji-snow-snowflake-holographic-snowflake-emoji-png-transparent/">here</a>.</li>
+        </ul>
+        <h2>Icons</h2>
+        <ul>
+          <li><a href="https://fonts.google.com/icons">Google Material Icons</a> — Apache License 2.0</li>
+          <li><a href="https://github.com/Templarian/MaterialDesign">Material Design Icons</a> — SIL Open Font License 1.1</li>
+        </ul>
+        <h2>Contributors</h2>
+        <ul>
+          <li><strong>Snow</strong> — Lead Dev</li>
+          <li><a href="https://github.com/NyxIsBad">NyxIsBad</a> — Helped get this up and running!</li>
+          <li><a href="https://discord.com/users/294957734552535040">Sessh</a> — Helped find bugs and made valuable suggestions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div>By Aquarion-D Team</div>
+    <div><a href="https://github.com/Aquarion-D/Aquarion" style="color: #aa88ff">GitHub</a></div>
+  </div>
+  <script src="js/tabs.js"></script>
+</body>
+</html>
