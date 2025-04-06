@@ -1,19 +1,30 @@
+// Function to handle tab switching
 function showTab(tabId, event) {
-  // Hide all content sections
-  const sections = document.querySelectorAll('.content-section');
-  sections.forEach(section => section.classList.remove('active'));
+  // Get all content sections
+  const contentSections = document.querySelectorAll('.content-section');
+  
+  // Get all tab buttons
+  const tabs = document.querySelectorAll('.tab');
+  
+  // Hide all sections
+  contentSections.forEach(section => {
+      section.classList.remove('active');
+  });
+  
+  // Deactivate all tabs
+  tabs.forEach(tab => {
+      tab.setAttribute('aria-selected', 'false');
+  });
 
-  // Remove active state from all tabs
-  const tabs = document.querySelectorAll('.nav-button');
-  tabs.forEach(tab => tab.classList.remove('active'));
-
-  // Show the clicked section and set the tab as active
+  // Show the selected section and activate the corresponding tab
   document.getElementById(tabId).classList.add('active');
-  event.currentTarget.classList.add('active');
+  event.target.setAttribute('aria-selected', 'true');
 }
 
-// Collapsible submenu logic
-function toggleSubMenu(sectionId) {
-  const subMenu = document.getElementById(sectionId);
-  subMenu.classList.toggle('active');
-}
+// Get all nav buttons
+document.querySelectorAll('.nav-button').forEach(button => {
+  button.addEventListener('click', (event) => {
+      const section = event.target.getAttribute('data-section');
+      showTab(section, event);
+  });
+});

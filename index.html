@@ -1,123 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aquarion</title>
-    <link rel="stylesheet" href="css/style.css" /> <!-- Link to compiled CSS file  -->
-  </head>
-  <body>
+    <link rel="stylesheet" href="css/style.css" /> <!-- Link to compiled CSS file -->
+</head>
+
+<body>
     <div class="background"></div>
     <div class="container">
-      <nav>
-        <button data-section="about" class="nav-button active">About</button>
-        <button data-section="download" class="nav-button">Download</button>
-        <button data-section="privacy" class="nav-button">Privacy Notice</button>
-      </nav>
-      <div class="content">
-        <div id="about" class="content-section active">
-          <h1>About Aquarion</h1>
-          <p>Aquarion is a customizable Discord theme. Clean. Stylish. No telemetry. Just vibes.</p>
+        <nav>
+            <button data-section="about" class="nav-button active" role="tab" aria-controls="about" aria-selected="true" onclick="showTab('about', event)">About</button>
+            <button data-section="download" class="nav-button" role="tab" aria-controls="download" onclick="showTab('download', event)">Download</button>
+            <button data-section="privacy" class="nav-button" role="tab" aria-controls="privacy" onclick="showTab('privacy', event)">Privacy Notice</button>
+            <button data-section="changelog" class="nav-button" role="tab" aria-controls="changelog" onclick="showTab('changelog', event)">Changelog</button>
+            <button data-section="credits" class="nav-button" role="tab" aria-controls="credits" onclick="showTab('credits', event)">Credits</button>
+        </nav>
+        <div class="content">
+            <div id="about" class="content-section active">
+                <h1>About Aquarion</h1>
+                <p>Aquarion is a customizable Discord theme. Clean. Stylish. No telemetry. Just vibes.</p>
+            </div>
+            <div id="download" class="content-section">
+                <h1>Download</h1>
+                <p>You can download the latest version from our <a href="https://github.com/Aquarion-D/Aquarion">GitHub</a>.</p>
+                <h2>Contributors</h2>
+                <ul>
+                    <li><a href="https://github.com/NyxIsBad">NyxIsBad</a> — Helped get this up and running!</li>
+                    <li><a href="https://discord.com/users/294957734552535040">Sessh</a> — Helped find bugs and made valuable suggestions</li>
+                </ul>
+            </div>
+            <div id="privacy" class="content-section">
+                <h1>Privacy Notice</h1>
+                <p>Aquarion does not collect any user data or telemetry.</p>
+                <p>When checking for updates, Aquarion will access:</p>
+                <ul>
+                    <li><code>https://aquarion-d.github.io/Aquarion/main.css</code></li>
+                    <li><code>https://discordstyles.github.io/RadialStatus/RadialStatus.css</code></li>
+                </ul>
+                <p>GitHub may show public stats like downloads and forks.</p>
+            </div>
+            <div id="changelog" class="content-section">
+                <h2>Changelog for Aquarion v1.0.1</h2>
+                <details>
+                    <summary><strong>UI Enhancements:</strong></summary>
+                    <ul>
+                        <li>Moved date dividers to the middle.</li>
+                        <li>Added new <code>alt-color</code> options for customization.</li>
+                        <li>Cleaned up Nitro "most popular" section (removed border).</li>
+                        <li>Updated activity texts to use <code>alt-color</code>.</li>
+                        <li>Reworked message pill (centered, square, <code>alt-color</code>).</li>
+                        <li>Redesigned server member list with <code>alt-color</code> roles and main-color borders.</li>
+                        <li>Server category names now use <code>alt-color</code>.</li>
+                        <li>Reduced borders and added shading for a cleaner look.</li>
+                        <li>Changed wordmark to “Aquarion v1.0.1” (removed glow).</li>
+                        <li>Updated theme button whites to match main color.</li>
+                        <li>Made background for the home icon transparent for cleaner visuals.</li>
+                        <li>Removed the home shop mosaic.</li>
+                        <li>Darkened voice count slightly for better readability.</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary><strong>Vencord Plugin Updates:</strong></summary>
+                    <ul>
+                        <li>Adjusted the Spotify controls border.</li>
+                        <li>Added support for voice messages in Vencord.</li>
+                        <li>Darkened plugin boxes and changed info text to white.</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary><strong>Interaction Improvements:</strong></summary>
+                    <ul>
+                        <li>Tweaked the Nitro button shine (slowed down and applied <code>alt-color</code>).</li>
+                        <li>Refined the message request section style for better visibility.</li>
+                        <li>Adjusted keybind recording for voice/video push-to-talk for clearer display.</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary><strong>Miscellaneous Changes:</strong></summary>
+                    <ul>
+                        <li>Made the "Looking for blocked users?" pop-up transparent.</li>
+                        <li>Reduced the flashiness of forums list title and user/message content.</li>
+                        <li>Added hover effect to emoji removal in server settings.</li>
+                        <li>Modified the boost popup and server boost settings for clarity.</li>
+                        <li>Applied background overlay to boost mural in server menu.</li>
+                        <li>Added a frosted glass effect toggle in settings.</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary><strong>Other Improvements:</strong></summary>
+                    <ul>
+                        <li>A bunch of small tweaks for better aesthetics and usability, details can be found in the <a href="https://github.com/Aquarion-D/Aquarion/commits/Aquarion/">commits</a>.</li>
+                    </ul>
+                </details>
+            </div>
+            <div id="credits" class="content-section">
+                <h2>Credits</h2>
+                <div class="nested-sections">
+                    <h3>Contributors</h3>
+                    <ul>
+                        <li><a href="https://github.com/BabyBoySnow">Snow</a> — Lead Dev</li>
+                        <li><a href="https://github.com/NyxIsBad/NyxIsBad">NyxIsBad</a></li>
+                        <li><a href="https://discord.com/users/294957734552535040">Sessh</a></li>
+                    </ul>
+
+                    <div id="icon-credits" class="content-section">
+                        <h2>Icon Credits</h2>
+                        <p>Most of the icons used in the Aquarion theme are sourced from external creators. These icons are hosted on the Aquarion repository for better access and control.</p>
+                        <p>If you are the copyright holder of any of the icons used and would like to have it removed, please submit an <a href="https://github.com/Aquarion-D/Aquarion/issues">issue</a>.</p>
+                        <p>All rights are reserved by their respective owners.</p>
+
+                        <h3>Google Material Icons</h3>
+                        <p>Many of the icons are from Google's Material Design. Google provides high-quality Material Design icons with multiple styles for each icon.</p>
+                        <p><b>Website:</b> <a href="https://material.io/tools/icons">Google Material Icons</a></p>
+                        <p><b>GitHub:</b> <a href="https://github.com/google/material-design-icons">google/material-design-icons</a></p>
+                        <p><b>License:</b> <a href="https://github.com/google/material-design-icons/blob/master/LICENSE">Apache License 2.0</a></p>
+
+                        <h3>Material Design Icons</h3>
+                        <p>Material Design Icons is a large collection of Material Design icons made by various contributors. It includes icons created by Google, Austin Andrews, and many other community submissions.</p>
+                        <p><b>Website:</b> <a href="https://materialdesignicons.com">Material Design Icons</a></p>
+                        <p><b>GitHub:</b> <a href="https://github.com/Templarian/MaterialDesign">Templarian/MaterialDesign</a></p>
+                        <p><b>License:</b> <a href="https://github.com/Templarian/MaterialDesign/blob/master/LICENSE">SIL Open Font License 1.1</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div>By Aquarion-D Team</div>
+                <div><a href="https://github.com/Aquarion-D/Aquarion" style="color: #aa88ff">GitHub</a></div>
+            </div>
         </div>
-        <div id="download" class="content-section">
-          <h1>Download</h1>
-          <p>You can download the latest version from our <a href="https://github.com/Aquarion-D/Aquarion">GitHub</a>.</p>
-          <h2>Contributors</h2>
-          <ul>
-            <li><a href="https://github.com/NyxIsBad">NyxIsBad</a> — Helped get this up and running!</li>
-            <li><a href="https://discord.com/users/294957734552535040">Sessh</a> — Helped find bugs and made valuable suggestions</li>
-          </ul>
-        </div>
-        <div id="privacy" class="content-section">
-          <h1>Privacy Notice</h1>
-          <p>Aquarion does not collect any user data or telemetry.</p>
-          <p>When checking for updates, Aquarion will access:</p>
-          <ul>
-            <li><code>https://aquarion-d.github.io/Aquarion/main.css</code></li>
-            <li><code>https://discordstyles.github.io/RadialStatus/RadialStatus.css</code></li>
-          </ul>
-          <p>GitHub may show public stats like downloads and forks.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="tab-container">
-      <button class="tab" onclick="showTab('changelog', event)">Changelog</button>
-      <button class="tab" onclick="showTab('credits', event)">Credits</button>
-    </div>
-
-    <div id="changelog" class="content-section">
-      <h2>Changelog for Aquarion v1.0.1</h2>
-      <details>
-        <summary><strong>UI Enhancements:</strong></summary>
-        <ul>
-          <li>Moved date dividers to the middle.</li>
-          <li>Added new <code>alt-color</code> options for customization.</li>
-          <li>Cleaned up Nitro "most popular" section (removed border).</li>
-          <li>Updated activity texts to use <code>alt-color</code>.</li>
-          <li>Reworked message pill (centered, square, <code>alt-color</code>).</li>
-          <li>Redesigned server member list with <code>alt-color</code> roles and main-color borders.</li>
-          <li>Server category names now use <code>alt-color</code>.</li>
-          <li>Reduced borders and added shading for a cleaner look.</li>
-          <li>Changed wordmark to “Aquarion v1.0.1” (removed glow).</li>
-          <li>Updated theme button whites to match main color.</li>
-          <li>Made background for the home icon transparent for cleaner visuals.</li>
-          <li>Removed the home shop mosaic.</li>
-          <li>Darkened voice count slightly for better readability.</li>
-        </ul>
-      </details>
-      <details>
-        <summary><strong>Vencord Plugin Updates:</strong></summary>
-        <ul>
-          <li>Adjusted the Spotify controls border.</li>
-          <li>Added support for voice messages in Vencord.</li>
-          <li>Darkened plugin boxes and changed info text to white.</li>
-        </ul>
-      </details>
-      <details>
-        <summary><strong>Interaction Improvements:</strong></summary>
-        <ul>
-          <li>Tweaked the Nitro button shine (slowed down and applied <code>alt-color</code>).</li>
-          <li>Refined the message request section style for better visibility.</li>
-          <li>Adjusted keybind recording for voice/video push-to-talk for clearer display.</li>
-        </ul>
-      </details>
-      <details>
-        <summary><strong>Miscellaneous Changes:</strong></summary>
-        <ul>
-          <li>Made the "Looking for blocked users?" pop-up transparent.</li>
-          <li>Reduced the flashiness of forums list title and user/message content.</li>
-          <li>Added hover effect to emoji removal in server settings.</li>
-          <li>Modified the boost popup and server boost settings for clarity.</li>
-          <li>Applied background overlay to boost mural in server menu.</li>
-          <li>Added a frosted glass effect toggle in settings.</li>
-        </ul>
-      </details>
-      <details>
-        <summary><strong>Other Improvements:</strong></summary>
-        <ul>
-          <li>A bunch of small tweaks for better aesthetics and usability, details can be found in the <a href="https://github.com/Aquarion-D/Aquarion/commits/Aquarion/">commits</a>.</li>
-        </ul>
-      </details>
-    </div>
-
-    <div id="credits" class="content-section">
-      <h2>Credits</h2>
-      <div class="nested-sections">
-        <h3>Contributors</h3>
-        <ul>
-          <li><a href="https://github.com/BabyBoySnow">Snow</a> — Lead Dev</li>
-          <li><a href="https://github.com/NyxIsBad/NyxIsBad">NyxIsBad</a></li>
-          <li><a href="https://discord.com/users/294957734552535040">Sessh</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer">
-      <div>By Aquarion-D Team</div>
-      <div><a href="https://github.com/Aquarion-D/Aquarion" style="color: #aa88ff">GitHub</a></div>
     </div>
 
     <script src="js/tabs.js"></script> <!-- Linking to external JS file -->
-  </body>
+</body>
 </html>
