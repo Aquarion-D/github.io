@@ -65,6 +65,7 @@ button.nav-button:focus {
   width: 100%;
   flex-wrap: wrap;
   justify-content: center; /* Center the tabs */
+  padding-bottom: 1rem; /* Adjust the spacing between tabs and content */
 }
 
 button.tab {
@@ -76,9 +77,9 @@ button.tab {
   cursor: pointer;
   font-size: 1rem;
   transition: 0.2s ease all;
-  min-width: 120px; /* Ensure tabs have consistent width */
+  min-width: 120px;
   text-align: center;
-  flex-shrink: 0; /* Prevent the tabs from shrinking */
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 button.tab.active {
@@ -117,6 +118,7 @@ button.tab:focus {
     transform: translateY(0);
   }
 }
+/* Styling for collapsible changelog */
 details {
   margin: 1rem 0;
   background: rgba(255, 255, 255, 0.05);
@@ -146,21 +148,22 @@ details li {
   color: #ddd;
 }
 
-ul {
+ul.changelog {
   padding-left: 1.5rem;
   margin-bottom: 1rem;
 }
 
-li {
+li.changelog-item {
   margin-bottom: 0.5rem;
   color: #ccc;
 }
 
 .footer {
+  margin-top: auto; /* Push footer to the bottom */
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  background: rgba(20, 20, 30, 0.9); /* Slightly higher opacity */
+  background: rgba(20, 20, 30, 0.9);
   color: #999;
   font-size: 0.9rem;
 }

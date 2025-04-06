@@ -4,7 +4,7 @@ function showTab(tabId, event) {
   sections.forEach(section => section.classList.remove('active'));
 
   // Remove active state from all tabs
-  const tabs = document.querySelectorAll('.tab');
+  const tabs = document.querySelectorAll('.nav-button');
   tabs.forEach(tab => tab.classList.remove('active'));
 
   // Show the clicked section and set the tab as active
@@ -12,12 +12,8 @@ function showTab(tabId, event) {
   event.currentTarget.classList.add('active');
 }
 
+// Collapsible submenu logic
 function toggleSubMenu(sectionId) {
   const subMenu = document.getElementById(sectionId);
-  
-  if (subMenu.classList.contains('active')) {
-    subMenu.classList.remove('active');
-  } else {
-    subMenu.classList.add('active');
-  }
+  subMenu.classList.toggle('active');
 }
