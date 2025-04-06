@@ -7,17 +7,16 @@
   cursor: pointer;
   border-radius: 6px;
   transition: all 0.3s ease;
-
   &:hover {
     background-color: rgba(170, 136, 255, 0.1); /* subtle purple hover */
-}
+  }
 
 .tab.active-tab {
   background-color: rgba(170, 136, 255, 0.2); /* subtle purple active */
   border-left: 4px solid #aa88ff;
   color: #aa88ff;
   font-weight: bold;
-}
+} 
 
 .content-section {
   opacity: 0;
@@ -26,10 +25,10 @@
   position: absolute;
   width: calc(100% - 200px);
   padding: 2rem;
-
-  &.active {
+  &:active {
     opacity: 1;
     visibility: visible;
     position: relative;
   }
+}
 }
