@@ -189,9 +189,12 @@ li.changelog-item {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  left: 0;
+  bottom: 0;
   background-color: rgba(20, 20, 30, 0.9);
   color: #aaa;
-  margin-top: auto; /* Push footer to the bottom */
+  width: 100%;
+  position: fixed;
 }
 
 .footer .github-link {
