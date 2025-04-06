@@ -1,223 +1,227 @@
-// === GLOBAL RESETS ===
+/* === GLOBAL RESETS === */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  /* Ensure the body and html take up the full height */
-html, body {
-  height: 100%;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-  
-  // === BODY ===
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
-    background: url("https://raw.githubusercontent.com/Aquarion-D/github.io/15e2b8981d6ac16dee9de2fc5cdea1743e5d1799/assets/Aquarion%20Preview.png") no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    min-height: 100vh;
-    padding: 1rem; // Only one padding declaration
-    position: relative;
-  }
-  
-  // === DARK OVERLAY ===
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: -1;
-  }
-  
-  // === NAVIGATION BUTTONS ===
-  nav {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the buttons */
-  }
-  
-  button.nav-button {
-    background: transparent;
-    border: 1px solid rgba(170, 136, 255, 0.3);
-    color: #aa88ff;
-    padding: 10px 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: 0.2s ease all;
-    min-width: 120px;  /* Ensure buttons have a consistent width */
-    text-align: center;
-  }
-  
-  button.nav-button.active {
-    background-color: rgba(170, 136, 255, 0.1);
-    border-color: rgba(170, 136, 255, 0.6);
-    color: #ffffff;
-  }
-  
-  button.nav-button:hover,
-  button.nav-button:focus {
-    background-color: rgba(170, 136, 255, 0.1);
-    border-color: rgba(170, 136, 255, 0.6);
-    color: #ffffff;
-    outline: none;
-  }
-  
-  // === TABS ===
-  .tab-container {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the tabs */
-    padding-bottom: 1rem; /* Adjust the spacing between tabs and content */
-  }
-  
-  button.tab {
-    background: transparent;
-    border: 1px solid rgba(170, 136, 255, 0.3);
-    color: #aa88ff;
-    padding: 10px 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: 0.2s ease all;
-    min-width: 120px;
-    text-align: center;
-    flex-shrink: 0; /* Prevent shrinking */
-  }
-  
-  button.tab.active {
-    background-color: rgba(170, 136, 255, 0.3);
-    border-color: rgba(170, 136, 255, 1);
-    color: #fff;
-  }
-  
-  button.tab:hover,
-  button.tab:focus {
-    background-color: rgba(170, 136, 255, 0.1);
-    border-color: rgba(170, 136, 255, 0.6);
-    color: #ffffff;
-    outline: none;
-  }
-  
-  // === TABS CONTENT ===
-  .content-section {
-    display: none;
-    animation: fadeIn 0.3s ease;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 1rem;
-    border-radius: 12px;
-  }
-  
-  .content-section.active {
-    display: block;
-  }
-  
-  // === ANIMATION ===
-  @keyframes fadeIn {
-    from {
+
+/* Ensure the body and html take up the full height */
+html, body {
+  height: 100%; /* Ensure full height of viewport */
+  margin: 0; /* Remove default margin */
+  display: flex; /* Use flexbox on the body */
+  flex-direction: column; /* Stack children vertically */
+}
+
+.container {
+  flex: 1; /* Take up all remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+/* === BODY === */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+  background: url("https://raw.githubusercontent.com/Aquarion-D/github.io/15e2b8981d6ac16dee9de2fc5cdea1743e5d1799/assets/Aquarion%20Preview.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh; /* Ensure body takes up at least full height */
+  padding: 1rem; /* Padding around the body */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === DARK OVERLAY === */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+/* === NAVIGATION BUTTONS === */
+nav {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the buttons */
+}
+
+/* Button Styling */
+button.nav-button {
+  background: transparent;
+  border: 1px solid rgba(170, 136, 255, 0.3);
+  color: #aa88ff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s ease all;
+  min-width: 120px;  /* Ensure buttons have a consistent width */
+  text-align: center;
+}
+
+button.nav-button.active {
+  background-color: rgba(170, 136, 255, 0.1);
+  border-color: rgba(170, 136, 255, 0.6);
+  color: #ffffff;
+}
+
+button.nav-button:hover,
+button.nav-button:focus {
+  background-color: rgba(170, 136, 255, 0.1);
+  border-color: rgba(170, 136, 255, 0.6);
+  color: #ffffff;
+  outline: none;
+}
+
+/* === TABS === */
+.tab-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the tabs */
+  padding-bottom: 1rem; /* Adjust spacing between tabs and content */
+}
+
+button.tab {
+  background: transparent;
+  border: 1px solid rgba(170, 136, 255, 0.3);
+  color: #aa88ff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s ease all;
+  min-width: 120px;
+  text-align: center;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+button.tab.active {
+  background-color: rgba(170, 136, 255, 0.3);
+  border-color: rgba(170, 136, 255, 1);
+  color: #fff;
+}
+
+button.tab:hover,
+button.tab:focus {
+  background-color: rgba(170, 136, 255, 0.1);
+  border-color: rgba(170, 136, 255, 0.6);
+  color: #ffffff;
+  outline: none;
+}
+
+/* === TABS CONTENT === */
+.content-section {
+  display: none;
+  animation: fadeIn 0.3s ease;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.content-section.active {
+  display: block;
+}
+
+/* === ANIMATION === */
+@keyframes fadeIn {
+  from {
       opacity: 0;
       transform: translateY(5px);
-    }
-    to {
+  }
+  to {
       opacity: 1;
       transform: translateY(0);
-    }
   }
-  
-/* Styling for collapsible changelog */
-details {
-    margin: 1rem 0;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(170, 136, 255, 0.1);
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-  }
-  
-  details summary {
-    cursor: pointer;
-    font-weight: bold;
-    color: #aa88ff;
-    outline: none;
-  }
-  
-  details[open] summary {
-    color: #ffffff;
-  }
-  
-  details ul {
-    margin-top: 0.5rem;
-    padding-left: 1.5rem;
-  }
-  
-  details li {
-    list-style: disc;
-    color: #ddd;
-  }
-  
-  ul.changelog {
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  li.changelog-item {
-    margin-bottom: 0.5rem;
-    color: #ccc;
-  }
-  
-  
-  // === FOOTER ===
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: rgba(20, 20, 30, 0.9);
-    color: #aaa;
 }
 
-  .footer .github-link {
-      color: #aa88ff;
-      text-decoration: none;
-  }
+/* Styling for collapsible changelog */
+details {
+  margin: 1rem 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(170, 136, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
 
-  .footer .footer-icon {
-      width: 20px;
-      height: 20px;
-      vertical-align: middle;
-      margin-left: 5px;
-  }
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #aa88ff;
+  outline: none;
+}
 
-  // === MOBILE SPECIFIC STYLES ===
-  @media (max-width: 768px) {
-    body {
+details[open] summary {
+  color: #ffffff;
+}
+
+details ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+details li {
+  list-style: disc;
+  color: #ddd;
+}
+
+ul.changelog {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li.changelog-item {
+  margin-bottom: 0.5rem;
+  color: #ccc;
+}
+
+/* === FOOTER === */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(20, 20, 30, 0.9);
+  color: #aaa;
+  margin-top: auto; /* Push footer to the bottom */
+}
+
+.footer .github-link {
+  color: #aa88ff;
+  text-decoration: none;
+}
+
+/* === MOBILE SPECIFIC STYLES === */
+@media (max-width: 768px) {
+  body {
       background-size: cover;
       padding: 1rem;
       position: relative;
-    }
-  
-    // Adjust nav and tab layout for mobile
-    nav {
+  }
+
+  /* Adjust nav and tab layout for mobile */
+  nav {
       flex-direction: column;
       align-items: center; /* Center buttons on small screens */
-    }
-  
-    .tab-container {
+  }
+
+  .tab-container {
       flex-direction: column;
       gap: 1rem;
-    }
-  
-    button.nav-button,
-    button.tab {
+  }
+
+  button.nav-button,
+  button.tab {
       padding: 8px 16px;
       font-size: 0.9rem;
       width: 100%; /* Full-width buttons on small screens */
-    }
-  }  
+  }
+}
