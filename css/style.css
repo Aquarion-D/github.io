@@ -9,14 +9,23 @@
 html, body {
   height: 100%; /* Ensure full height of viewport */
   margin: 0; /* Remove default margin */
-  display: flex; /* Use flexbox on the body */
-  flex-direction: column; /* Stack children vertically */
+  padding: 0;
 }
 
 .container {
   flex: 1; /* Take up all remaining space */
   display: flex;
   flex-direction: column;
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
 }
 
 /* === BODY === */
@@ -31,8 +40,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-/* === DARK OVERLAY === */
 body::before {
   content: "";
   position: fixed;
@@ -63,19 +70,17 @@ button.nav-button {
   min-width: 120px; /* Ensure buttons have a consistent width */
   text-align: center;
 }
+button.nav-button:hover, button.nav-button:focus {
+  background-color: rgba(170, 136, 255, 0.1);
+  border-color: rgba(170, 136, 255, 0.6);
+  color: #ffffff;
+  outline: none;
+}
 
 button.nav-button.active {
   background-color: rgba(170, 136, 255, 0.1);
   border-color: rgba(170, 136, 255, 0.6);
   color: #ffffff;
-}
-
-button.nav-button:hover,
-button.nav-button:focus {
-  background-color: rgba(170, 136, 255, 0.1);
-  border-color: rgba(170, 136, 255, 0.6);
-  color: #ffffff;
-  outline: none;
 }
 
 /* === TABS === */
@@ -103,19 +108,17 @@ button.tab {
   text-align: center;
   flex-shrink: 0; /* Prevent shrinking */
 }
+button.tab:hover, button.tab:focus {
+  background-color: rgba(170, 136, 255, 0.1);
+  border-color: rgba(170, 136, 255, 0.6);
+  color: #ffffff;
+  outline: none;
+}
 
 button.tab.active {
   background-color: rgba(170, 136, 255, 0.3);
   border-color: rgb(170, 136, 255);
   color: #fff;
-}
-
-button.tab:hover,
-button.tab:focus {
-  background-color: rgba(170, 136, 255, 0.1);
-  border-color: rgba(170, 136, 255, 0.6);
-  color: #ffffff;
-  outline: none;
 }
 
 /* === TABS CONTENT === */
@@ -125,6 +128,11 @@ button.tab:focus {
   background: rgba(0, 0, 0, 0.3);
   padding: 1rem;
   border-radius: 12px;
+}
+.content-section .contrib-links,
+.content-section .icon-links,
+.content-section .image-links {
+  color: #aa88ff;
 }
 
 .content-section.active {
@@ -184,16 +192,13 @@ li.changelog-item {
 
 /* === FOOTER === */
 .footer {
-  display: block;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: rgba(20, 20, 30, 0.9);
-  color: #aaa;
-  width: 100%;
-  position: sticky;
-  bottom: 0;
-  left: 0;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
 }
 
 .footer .github-link {
