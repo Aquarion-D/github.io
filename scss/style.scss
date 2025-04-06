@@ -133,7 +133,11 @@ button.tab.active {
   border-radius: 12px;
   .contrib-links,
   .icon-links,
-  .image-links {
+  .image-links,
+  .website-link,
+  .main-css-link,
+  .radial-status-link,
+  .commits-link {
     color: #aa88ff;
   }
 }
@@ -201,8 +205,9 @@ li.changelog-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1rem;
   font-size: 0.9rem;
+  bottom: auto;
 }
 
 
