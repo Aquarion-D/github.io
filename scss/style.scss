@@ -9,14 +9,16 @@
 html, body {
   height: 100%; /* Ensure full height of viewport */
   margin: 0; /* Remove default margin */
-  display: flex; /* Use flexbox on the body */
-  flex-direction: column; /* Stack children vertically */
 }
 
 .container {
   flex: 1; /* Take up all remaining space */
   display: flex;
   flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
 }
 
 /* === BODY === */
@@ -30,15 +32,14 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-}
-
-/* === DARK OVERLAY === */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: -1;
+  // === DARK OVERLAY ===
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+  }
 }
 
 /* === NAVIGATION BUTTONS === */
@@ -62,20 +63,19 @@ button.nav-button {
   transition: 0.2s ease all;
   min-width: 120px;  /* Ensure buttons have a consistent width */
   text-align: center;
+  &:hover,
+  &:focus {
+    background-color: rgba(170, 136, 255, 0.1);
+    border-color: rgba(170, 136, 255, 0.6);
+    color: #ffffff;
+    outline: none;
+  }
 }
 
 button.nav-button.active {
   background-color: rgba(170, 136, 255, 0.1);
   border-color: rgba(170, 136, 255, 0.6);
   color: #ffffff;
-}
-
-button.nav-button:hover,
-button.nav-button:focus {
-  background-color: rgba(170, 136, 255, 0.1);
-  border-color: rgba(170, 136, 255, 0.6);
-  color: #ffffff;
-  outline: none;
 }
 
 /* === TABS === */
@@ -102,20 +102,19 @@ button.tab {
   min-width: 120px;
   text-align: center;
   flex-shrink: 0; /* Prevent shrinking */
+  &:hover,
+  &:focus {
+    background-color: rgba(170, 136, 255, 0.1);
+    border-color: rgba(170, 136, 255, 0.6);
+    color: #ffffff;
+    outline: none;
+  }
 }
 
 button.tab.active {
   background-color: rgba(170, 136, 255, 0.3);
   border-color: rgba(170, 136, 255, 1);
   color: #fff;
-}
-
-button.tab:hover,
-button.tab:focus {
-  background-color: rgba(170, 136, 255, 0.1);
-  border-color: rgba(170, 136, 255, 0.6);
-  color: #ffffff;
-  outline: none;
 }
 
 /* === TABS CONTENT === */
@@ -185,16 +184,14 @@ li.changelog-item {
 
 /* === FOOTER === */
 .footer {
-  display: block;
+  margin-top: auto;
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: rgba(20, 20, 30, 0.9);
-  color: #aaa;
-  width: 100%;
-  position: sticky;
-  bottom: 0;
-  left: 0;
+  font-size: 0.9rem;
 }
 
 
