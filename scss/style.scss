@@ -5,159 +5,170 @@
     box-sizing: border-box;
   }
   
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: url("https://raw.githubusercontent.com/Aquarion-D/github.io/15e2b8981d6ac16dee9de2fc5cdea1743e5d1799/assets/Aquarion%20Preview.png") no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    min-height: 100vh;
-    padding: 2rem;
-    position: relative;
-  }
-  
-  // === DARK OVERLAY ===
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: -1;
-  }
-  
-  // === NAVIGATION BUTTONS ===
-  nav {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-    display: -webkit-flex; /* Safari */
-  }
-  
-  button.nav-button {
-    background: transparent;
-    border: 1px solid rgba(170, 136, 255, 0.3);
-    color: #aa88ff;
-    padding: 10px 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: 0.2s ease all;
-  }
-  
-  button.nav-button.active {
-    background-color: rgba(170, 136, 255, 0.1);
-    border-color: rgba(170, 136, 255, 0.6);
-    color: #ffffff;
-  }
-  
-  button.nav-button:hover,
-  button.nav-button:focus {
-    background-color: rgba(170, 136, 255, 0.1);
-    border-color: rgba(170, 136, 255, 0.6);
-    color: #ffffff;
-    outline: none;
-  }
-  
-  // === TABS ===
-  .tab-container {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-    display: -webkit-flex; /* Safari */
-  }
-  
-  button.tab {
-    background: transparent;
-    border: 1px solid rgba(170, 136, 255, 0.3);
-    color: #aa88ff;
-    padding: 10px 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: 0.2s ease all;
-  }
-  
-  button.tab:hover,
-  button.tab:focus {
-    background-color: rgba(170, 136, 255, 0.1);
-    border-color: rgba(170, 136, 255, 0.6);
-    color: #ffffff;
-    outline: none;
-  }
-  
-  // === TABS CONTENT ===
-  .content-section {
-    display: none;
-    animation: fadeIn 0.3s ease;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 1rem;
-    border-radius: 12px;
-  }
-  
-  .content-section.active {
-    display: block;
-  }
-  
-  // === ANIMATION ===
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(5px);
+  @media (max-width: 768px) {
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+      background: url("https://raw.githubusercontent.com/Aquarion-D/github.io/15e2b8981d6ac16dee9de2fc5cdea1743e5d1799/assets/Aquarion%20Preview.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      min-height: 100vh;
+      padding: 1rem;
+      position: relative;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+  
+    // === DARK OVERLAY ===
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+  
+    // === NAVIGATION BUTTONS ===
+    nav {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      display: -webkit-flex; /* Safari */
+    }
+  
+    button.nav-button {
+      background: transparent;
+      border: 1px solid rgba(170, 136, 255, 0.3);
+      color: #aa88ff;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.2s ease all;
+    }
+  
+    button.nav-button.active {
+      background-color: rgba(170, 136, 255, 0.1);
+      border-color: rgba(170, 136, 255, 0.6);
+      color: #ffffff;
+    }
+  
+    button.nav-button:hover,
+    button.nav-button:focus {
+      background-color: rgba(170, 136, 255, 0.1);
+      border-color: rgba(170, 136, 255, 0.6);
+      color: #ffffff;
+      outline: none;
+    }
+  
+    // === TABS ===
+    .tab-container {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  
+    button.tab {
+      background: transparent;
+      border: 1px solid rgba(170, 136, 255, 0.3);
+      color: #aa88ff;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.2s ease all;
+      flex-shrink: 0; /* Prevent the tabs from shrinking */
+    }
+  
+    button.tab.active {
+      background-color: rgba(170, 136, 255, 0.3);
+      border-color: rgba(170, 136, 255, 1);
+      color: #fff;
+    }
+  
+    button.tab:hover,
+    button.tab:focus {
+      background-color: rgba(170, 136, 255, 0.1);
+      border-color: rgba(170, 136, 255, 0.6);
+      color: #ffffff;
+      outline: none;
+    }
+  
+    // === TABS CONTENT ===
+    .content-section {
+      display: none;
+      animation: fadeIn 0.3s ease;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1rem;
+      border-radius: 12px;
+    }
+  
+    .content-section.active {
+      display: block;
+    }
+  
+    // === ANIMATION ===
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    // === COLLAPSIBLE DETAILS ===
+    details {
+      margin: 1rem 0;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(170, 136, 255, 0.1);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+    }
+  
+    details summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: #aa88ff;
+      outline: none;
+    }
+  
+    details[open] summary {
+      color: #ffffff;
+    }
+  
+    details ul {
+      margin-top: 0.5rem;
+      padding-left: 1.5rem;
+    }
+  
+    details li {
+      list-style: disc;
+      color: #ddd;
+    }
+  
+    // === OTHER LISTS (e.g., changelog) ===
+    ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    li {
+      margin-bottom: 0.5rem;
+      color: #ccc;
+    }
+  
+    // === FOOTER ===
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      background: rgba(20, 20, 30, 0.9); /* Slightly higher opacity */
+      color: #999;
+      font-size: 0.9rem;
     }
   }
   
-  // === COLLAPSIBLE DETAILS ===
-  details {
-    margin: 1rem 0;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(170, 136, 255, 0.1);
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-  }
-  
-  details summary {
-    cursor: pointer;
-    font-weight: bold;
-    color: #aa88ff;
-    outline: none;
-  }
-  
-  details[open] summary {
-    color: #ffffff;
-  }
-  
-  details ul {
-    margin-top: 0.5rem;
-    padding-left: 1.5rem;
-  }
-  
-  details li {
-    list-style: disc;
-    color: #ddd;
-  }
-  
-  // === OTHER LISTS (e.g., changelog) ===
-  ul {
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  li {
-    margin-bottom: 0.5rem;
-    color: #ccc;
-  }
-
-  // === FOOTER ===
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    background: rgba(20, 20, 30, 0.85);
-    color: #999;
-    font-size: 0.9rem;
-  }
